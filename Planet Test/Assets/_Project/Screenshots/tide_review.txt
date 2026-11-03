@@ -1,0 +1,6 @@
+Drawdown: True
+Lowland sweep and respawn: True
+Sea restored: True
+Summit survival: True
+Waves observed: 2
+Default interval: 90s. Review ran at 4x game time after the climb.

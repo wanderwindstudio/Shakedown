@@ -1,0 +1,7 @@
+Geometry pass: True. Chunks=16; inconsistent shared heights=0; non-flat faces=0; oversized chunks=0; summit=120.76m.
+count=420 rocks=142 crystals=9 plants=269 underwater=0 steep=0 hash=-592411041
+Input pass: movement=True; mouse look=True; Escape releases cursor=True.
+1080p Editor camera renders (calm), 300 uncapped samples: mean=0.67ms (1484.6 renders/s), p95=0.85ms, main-thread mean=0.67ms, mean draw calls=68, mean triangles=158000. GPU: Apple M4 Pro.
+Camera callback timing includes Editor overhead and submission, not a GPU-completion measurement or standalone-build guarantee. Wave render sampling freezes game time to hold the crest in view.
+1080p Editor camera renders (wave), 300 uncapped samples: mean=0.63ms (1598.7 renders/s), p95=0.77ms, main-thread mean=0.62ms, mean draw calls=49, mean triangles=124081. GPU: Apple M4 Pro.
+Camera callback timing includes Editor overhead and submission, not a GPU-completion measurement or standalone-build guarantee. Wave render sampling freezes game time to hold the crest in view.

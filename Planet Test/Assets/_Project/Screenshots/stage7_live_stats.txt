@@ -1,0 +1,7 @@
+Live Unity Stats observation — 3 November 2026
+Unity 6000.3.26f1, Metal, Apple M4 Pro.
+Normal Play mode, target cap 60, Game view preset Full HD (1920x1080).
+After resize settled: 60.2 FPS (16.6ms); main 16.7ms; render thread 1.2ms.
+86 batches; 188.8k triangles; 566.3k vertices; 10 SetPass calls; 39 shadow casters.
+Observed directly in the Unity Game view Stats panel. Initial resize frame briefly showed 54.3 FPS.
+This is a shore-view observation, not a standalone-build, long-session or all-viewpoint guarantee.
