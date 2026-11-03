@@ -1,0 +1,13 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_Script: {fileID: 11500000, guid: 71b077b721e84077add2a1bb0f29f08a, type: 3}
+  m_Name: PartCatalog
+  m_EditorClassIdentifier:
+  parts:
+  - {fileID: 11400000, guid: 41b1d432350b4203a3705f91bebebcb6, type: 2}
+  - {fileID: 11400000, guid: a0a525fd26934829a6bd8fbb9e673409, type: 2}

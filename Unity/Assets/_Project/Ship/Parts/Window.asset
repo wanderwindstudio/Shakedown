@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_Script: {fileID: 11500000, guid: aa380b5c91ee4b7281cf4af24eb1da41, type: 3}
+  m_Name: Window
+  m_EditorClassIdentifier:
+  id: window
+  displayName: Window cube
+  size: {x: 1, y: 1, z: 1}
+  massKg: 60
+  autoShapes: 0
+  airtightFaces: 63
+  visualMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  material: {fileID: 2100000, guid: ad881f475e0f4775a2bbe6c4b07f2005, type: 2}

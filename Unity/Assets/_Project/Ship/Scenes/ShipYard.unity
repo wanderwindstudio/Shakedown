@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1001}
+  - component: {fileID: 1002}
+  m_Layer: 0
+  m_Name: SHAKEDOWN - ShipYard
+  m_TagString: Untagged
+  m_IsActive: 1
+--- !u!4 &1001
+Transform:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 1000}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &1002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 1000}
+  m_Enabled: 1
+  m_Script: {fileID: 11500000, guid: 6cd19709a49a4e2a9a1586c88d0b7881, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  catalog: {fileID: 11400000, guid: 0f9fa8b7b27c449fa8fd8546ed711dba, type: 2}
+  padMaterial: {fileID: 2100000, guid: 23b3ce0d5eff4be2a388261741110deb, type: 2}
+  stripeMaterial: {fileID: 2100000, guid: 58348f5a221c433ba0dd1d676b200f71, type: 2}
+  ghostMaterial: {fileID: 2100000, guid: e82710bcbf66480b91e14f2050b560dd, type: 2}
+  outlineMaterial: {fileID: 2100000, guid: afe2895a468e43799ff28c44fe91ce7b, type: 2}
+  skyMaterial: {fileID: 2100000, guid: 9759f8366073244e1a78a11c22a2ed83, type: 2}
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 1001}
