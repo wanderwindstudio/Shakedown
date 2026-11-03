@@ -5,7 +5,7 @@ namespace Shakedown.Ship
 {
     public static class ShipDropIn
     {
-        public static bool TryFindPosition(Vector3 origin, FirstPersonController player, ShipGrid grid, out Vector3 feet)
+        public static bool TryFindPosition(Vector3 origin, FirstPersonController player, ShipGrid grid, PartCatalog catalog, out Vector3 feet)
         {
             Physics.SyncTransforms();
             feet = default;
@@ -20,9 +20,11 @@ namespace Shakedown.Ship
                 }
                 if (!nearest.HasValue) return false;
                 var surface = nearest.Value;
-                var candidate = surface.point + Vector3.up * .05f;
                 bool walkable = surface.normal.y >= Mathf.Cos(player.SlopeLimit * Mathf.Deg2Rad);
-                if (walkable && !IntersectsShip(candidate, player.BodyHeight, player.BodyRadius, grid) && player.CanStandAt(candidate))
+                // A capsule touches a slope off-centre; its feet need more clearance than on a flat pad.
+                float slopeClearance = walkable ? player.BodyRadius * (1 / surface.normal.y - 1) : 0;
+                var candidate = surface.point + Vector3.up * (.05f + slopeClearance);
+                if (walkable && !IntersectsShip(candidate, player.BodyHeight, player.BodyRadius, grid, catalog) && player.CanStandAt(candidate))
                 {
                     feet = candidate;
                     return true;
@@ -32,7 +34,7 @@ namespace Shakedown.Ship
             return false;
         }
 
-        static bool IntersectsShip(Vector3 feet, float height, float radius, ShipGrid grid)
+        static bool IntersectsShip(Vector3 feet, float height, float radius, ShipGrid grid, PartCatalog catalog)
         {
             // Non-convex mesh colliders are surfaces: a capsule fully inside a block can miss them.
             // Check the actual occupied cells as well, so solid blocks never become standing space.
@@ -49,7 +51,9 @@ namespace Shakedown.Ship
                     for (int z = minZ; z <= maxZ; z++)
                     {
                         var cell = new Vector3Int(x, y, z);
-                        if (!grid.Contains(cell)) continue;
+                        if (!grid.TryGet(cell, out var data)) continue;
+                        // Convex ramps and frame bars are solid physics volumes, but not solid cell boxes.
+                        if (catalog.Find(data.partId).collisionKind != PartCollision.Box) continue;
                         var bounds = new Bounds(ShipVisuals.Centre(cell), Vector3.one * ShipGrid.CellSize);
                         float dx = feet.x - Mathf.Clamp(feet.x, bounds.min.x, bounds.max.x);
                         float dz = feet.z - Mathf.Clamp(feet.z, bounds.min.z, bounds.max.z);

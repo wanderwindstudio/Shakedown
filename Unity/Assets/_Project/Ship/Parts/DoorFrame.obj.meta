@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+guid: 073eabfea85042c7b579784bf278ff5c
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      43: 4300000
+    second: DoorFrame
+  externalObjects: {}
+  materials:
+    materialImportMode: 0
+  animations:
+    isReadable: 1
+  meshes:
+    globalScale: 1
+    useFileUnits: 1
+    useFileScale: 0
+    addColliders: 0
+    meshCompression: 0
+    fileIdsGeneration: 2
+    bakeAxisConversion: 0
+    importCameras: 0
+    importLights: 0
+    weldVertices: 1
+  tangentSpace:
+    normalImportMode: 1
+    normalSmoothAngle: 0
+    tangentImportMode: 3
+  importAnimation: 0

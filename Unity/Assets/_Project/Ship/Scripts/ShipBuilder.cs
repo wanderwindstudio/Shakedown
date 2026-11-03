@@ -15,8 +15,8 @@ namespace Shakedown.Ship
         public ShipGrid Grid { get; private set; }
         ShipVisuals visuals;
         readonly ShipHistory history = new ShipHistory();
-        GameObject ghost, outline;
-        int selected, rotation;
+        GameObject ghost, outline, ghostStripe;
+        int selected, rotation, paint;
         bool building;
         string message = "B opens the construction drone.";
         float messageUntil = 6;
@@ -27,14 +27,19 @@ namespace Shakedown.Ship
         public string SelectedName => catalog.parts[selected].displayName;
         public string Message => Time.time < messageUntil ? message : "";
 
-        public void Initialize()
+        public bool Shaping => visuals.Shaping;
+        public string PaintName => ShipPalette.Names[paint];
+        public void SetChamfer(float value) => visuals.SetChamfer(value);
+
+        public void Initialize(float chamfer)
         {
             Grid = new ShipGrid();
             Grid.Set(Vector3Int.zero, new ShipCell(catalog.parts[0].id));
             visuals = gameObject.AddComponent<ShipVisuals>();
-            visuals.Initialize(Grid, catalog, stripeMaterial);
+            visuals.Initialize(Grid, catalog, stripeMaterial, chamfer);
             ghost = CreatePreview("Placement ghost", ghostMaterial);
             var stripe = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            ghostStripe = stripe;
             Destroy(stripe.GetComponent<Collider>());
             stripe.transform.SetParent(ghost.transform, false);
             stripe.transform.localPosition = new Vector3(.04f, .26f, .504f);
@@ -78,11 +83,16 @@ namespace Shakedown.Ship
             if (k.escapeKey.wasPressedThisFrame) FirstPersonController.LockCursor(false);
             if (!captured && m.leftButton.wasPressedThisFrame) FirstPersonController.LockCursor(true);
             if (k.bKey.wasPressedThisFrame) ToggleMode();
+            if (k.hKey.wasPressedThisFrame) { visuals.ToggleShaping(); Say(visuals.Shaping ? "Auto-shaping on." : "Plain cubes."); }
             if (k.f5Key.wasPressedThisFrame) Save();
             if (k.f9Key.wasPressedThisFrame) Load();
             if (!building || !captured) { ghost.SetActive(false); outline.SetActive(false); return; }
             if (k.digit1Key.wasPressedThisFrame) selected = 0;
             if (k.digit2Key.wasPressedThisFrame) selected = 1;
+            if (k.digit3Key.wasPressedThisFrame) selected = 2;
+            if (k.digit4Key.wasPressedThisFrame) selected = 3;
+            if (k.leftBracketKey.wasPressedThisFrame) paint = (paint + 7) % 8;
+            if (k.rightBracketKey.wasPressedThisFrame) paint = (paint + 1) % 8;
             if (k.rKey.wasPressedThisFrame) rotation = CubeRotations.Turn(rotation, Vector3.up);
             if (k.tKey.wasPressedThisFrame) rotation = CubeRotations.Turn(rotation, Vector3.right);
             if (k.gKey.wasPressedThisFrame) rotation = CubeRotations.Turn(rotation, Vector3.forward);
@@ -91,8 +101,23 @@ namespace Shakedown.Ship
             Aim();
             if (m.leftButton.wasPressedThisFrame && hasTarget)
             {
-                if (valid) history.Execute(new CellCommand(Grid, target, new ShipCell(catalog.parts[selected].id, rotation), visuals.Changed));
+                if (valid) history.Execute(new CellCommand(Grid, target, new ShipCell(catalog.parts[selected].id, rotation, paint), visuals.Changed));
                 else Say(refusal);
+            }
+            if (hasTarget && Grid.TryGet(aimed, out var aimedCell))
+            {
+                if (k.lKey.wasPressedThisFrame && catalog.Find(aimedCell.partId).autoShapes)
+                {
+                    aimedCell.locked = !aimedCell.locked;
+                    history.Execute(new CellCommand(Grid, aimed, aimedCell, visuals.Changed));
+                    Say(aimedCell.locked ? "Hull shape locked." : "Hull shape unlocked.");
+                }
+                if (m.middleButton.wasPressedThisFrame)
+                {
+                    aimedCell.paint = paint;
+                    history.Execute(new CellCommand(Grid, aimed, aimedCell, visuals.Changed));
+                    Say("Painted " + PaintName + ".");
+                }
             }
             if (m.rightButton.wasPressedThisFrame && hasTarget)
             {
@@ -107,8 +132,15 @@ namespace Shakedown.Ship
             ghost.SetActive(hasTarget); outline.SetActive(hasTarget);
             if (!hasTarget) return;
             // Sample just inside/outside the hit face, independent of the combined mesh triangle order.
-            aimed = ToCell(hit.point - hit.normal * .01f);
-            target = ToCell(hit.point + hit.normal * .01f);
+            var marker = hit.collider.GetComponent<ShipChunk>();
+            aimed = marker.fixedPiece ? marker.cell : ToCell(hit.point - hit.normal * .01f);
+            // Slopes still target one face-adjacent cell, rather than a second point inside the wedge.
+            Vector3 n = hit.normal;
+            Vector3Int face = Mathf.Abs(n.y) >= Mathf.Max(Mathf.Abs(n.x), Mathf.Abs(n.z)) ? new Vector3Int(0, n.y > 0 ? 1 : -1, 0)
+                : Mathf.Abs(n.x) >= Mathf.Abs(n.z) ? new Vector3Int(n.x > 0 ? 1 : -1, 0, 0) : new Vector3Int(0,0,n.z > 0 ? 1 : -1);
+            target = aimed + face;
+            ghost.GetComponent<MeshFilter>().sharedMesh = catalog.parts[selected].visualMesh;
+            ghostStripe.SetActive(catalog.parts[selected].collisionKind == PartCollision.Box);
             valid = Grid.CanPlace(target, out refusal);
             // Below-pad cells remain addressable in the grid, but cannot be built into the landing pad.
             if (target.y < 0) { valid = false; refusal = "The landing pad blocks this cell."; }
@@ -130,7 +162,7 @@ namespace Shakedown.Ship
                 drone.SetPose(walkCamera.transform);
                 modeMessage = "Construction drone active.";
             }
-            else if (ShipDropIn.TryFindPosition(drone.transform.position, player, Grid, out var feet))
+            else if (ShipDropIn.TryFindPosition(drone.transform.position, player, Grid, catalog, out var feet))
             {
                 player.SetStandingPose(feet, drone.transform.eulerAngles.y);
                 modeMessage = "Dropped in here.";
@@ -138,6 +170,7 @@ namespace Shakedown.Ship
             else
                 modeMessage = "No room to stand here.";
 
+            visuals.SetBuildMode(building);
             player.InputLocked = building;
             walkCamera.gameObject.SetActive(!building);
             droneCamera.gameObject.SetActive(building);

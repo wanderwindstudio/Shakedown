@@ -12,7 +12,7 @@ MonoBehaviour:
   displayName: Hull cube
   size: {x: 1, y: 1, z: 1}
   massKg: 100
-  autoShapes: 0
+  autoShapes: 1
   airtightFaces: 63
   visualMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-  material: {fileID: 2100000, guid: a98026707d1c43338311a271f2590ae7, type: 2}
+  material: {fileID: 2100000, guid: 38f06473ed7c4269b2ae598c54641432, type: 2}

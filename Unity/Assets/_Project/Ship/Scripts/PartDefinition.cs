@@ -5,6 +5,8 @@ namespace Shakedown.Ship
     [System.Flags]
     public enum AirtightFaces { None = 0, Right = 1, Left = 2, Up = 4, Down = 8, Front = 16, Back = 32, All = 63 }
 
+    public enum PartCollision { Box, DoorFrame, Ramp }
+
     [CreateAssetMenu(menuName = "Shakedown/Part")]
     public sealed class PartDefinition : ScriptableObject
     {
@@ -14,6 +16,7 @@ namespace Shakedown.Ship
         public float massKg = 100;
         public bool autoShapes;
         public AirtightFaces airtightFaces = AirtightFaces.All;
+        public PartCollision collisionKind;
         public Mesh visualMesh;
         public Material material;
     }

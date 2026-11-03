@@ -30,7 +30,7 @@ namespace Shakedown.Ship
             foreach (var block in data.blocks)
             {
                 var p = new Vector3Int(block.x, block.y, block.z);
-                if (!ShipGrid.InBounds(p) || grid.Contains(p) || catalog.Find(block.partId) == null || block.rotation < 0 || block.rotation > 23 || block.paint < 0)
+                if (!ShipGrid.InBounds(p) || grid.Contains(p) || catalog.Find(block.partId) == null || block.rotation < 0 || block.rotation > 23 || block.paint < 0 || block.paint > 7)
                     throw new InvalidDataException("Invalid block data.");
                 grid.Set(p, new ShipCell(block.partId, block.rotation, block.paint, block.locked));
             }
