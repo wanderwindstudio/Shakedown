@@ -1,4 +1,5 @@
 using UnityEngine;
+using Shakedown.Player;
 using UnityEngine.Rendering;
 
 namespace Shakedown.Ship
@@ -36,7 +37,6 @@ namespace Shakedown.Ship
             var walk = MakeCamera("Player eyes");
             walk.tag = "MainCamera";
             var player = new GameObject("Cadet body").AddComponent<FirstPersonController>();
-            player.JumpHeight = 3;
             player.Initialize(new Vector3(0, .15f, -9), Quaternion.identity, walk, 0);
             var droneCamera = MakeCamera("Construction drone");
             var drone = droneCamera.gameObject.AddComponent<ConstructionDrone>();
@@ -67,14 +67,15 @@ namespace Shakedown.Ship
         {
             if (builder == null) return;
             GUI.color = new Color(.08f, .07f, .13f, .85f);
-            GUI.DrawTexture(new Rect(15, 15, 550, 124), Texture2D.whiteTexture);
+            GUI.DrawTexture(new Rect(15, 15, 630, 145), Texture2D.whiteTexture);
             GUI.color = new Color(.9f, .88f, .97f);
             GUI.Label(new Rect(28, 23, 520, 24), "SHAKEDOWN   /   " + (builder.Building ? "BUILD DRONE" : "WALK") + "   /   " + builder.SelectedName);
             GUI.Label(new Rect(28, 47, 520, 24), builder.Grid.Count + " blocks    ·    " + builder.Grid.Mass(catalog).ToString("N0") + " kg");
-            GUI.Label(new Rect(28, 71, 520, 24), "B mode  ·  WASD move  ·  Shift faster  ·  Space jump/up  ·  C down");
-            GUI.Label(new Rect(28, 92, 530, 24), "1/2 part  ·  R/T/G rotate  ·  LMB place  ·  RMB remove  ·  Z/Y undo/redo");
-            GUI.Label(new Rect(28, 113, 520, 24), "F5 save  ·  F9 load  ·  Esc release cursor  ·  click recapture");
-            GUI.Label(new Rect(28, 151, 900, 30), builder.Message);
+            GUI.Label(new Rect(28, 71, 600, 24), "B build / drop in here  ·  WASD move  ·  Shift faster");
+            GUI.Label(new Rect(28, 92, 600, 24), "Space: jump in Walk / up in Build  ·  C: down in Build");
+            GUI.Label(new Rect(28, 113, 600, 24), "1/2 part  ·  R/T/G rotate  ·  LMB place  ·  RMB remove  ·  Z/Y undo/redo");
+            GUI.Label(new Rect(28, 134, 600, 24), "F5 save  ·  F9 load  ·  Esc release cursor  ·  click recapture");
+            GUI.Label(new Rect(28, 177, 900, 30), builder.Message);
             GUI.Label(new Rect(Screen.width / 2f - 5, Screen.height / 2f - 12, 20, 24), "+");
         }
         void OnDestroy() { FirstPersonController.LockCursor(false); }

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Shakedown.Player;
 using UnityEngine.InputSystem;
 
 namespace Shakedown.Ship
@@ -123,12 +124,25 @@ namespace Shakedown.Ship
         void ToggleMode()
         {
             building = !building;
-            if (building) drone.SetPose(walkCamera.transform);
-            player.ReviewControl = building;
+            string modeMessage;
+            if (building)
+            {
+                drone.SetPose(walkCamera.transform);
+                modeMessage = "Construction drone active.";
+            }
+            else if (ShipDropIn.TryFindPosition(drone.transform.position, player, Grid, out var feet))
+            {
+                player.SetStandingPose(feet, drone.transform.eulerAngles.y);
+                modeMessage = "Dropped in here.";
+            }
+            else
+                modeMessage = "No room to stand here.";
+
+            player.InputLocked = building;
             walkCamera.gameObject.SetActive(!building);
             droneCamera.gameObject.SetActive(building);
             FirstPersonController.LockCursor(true);
-            Say(building ? "Construction drone active." : "Back at your player body.");
+            Say(modeMessage);
         }
         public void Say(string text) { message = text; messageUntil = Time.time + 4; }
         void Save()

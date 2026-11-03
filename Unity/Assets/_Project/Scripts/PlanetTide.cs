@@ -172,8 +172,8 @@ namespace TestPlanet
                 yield break;
             sweeping = true;
             Sweeps++;
-            bool wasReview = player.ReviewControl;
-            player.ReviewControl = true;
+            bool wasReview = player.InputLocked;
+            player.InputLocked = true;
             Vector3 eyeBase = player.Eyes.transform.localPosition;
             for (float elapsed = 0; elapsed < sweepDuration; elapsed += Time.deltaTime)
             {
@@ -193,7 +193,7 @@ namespace TestPlanet
             }
 
             hud.Fade = 0;
-            player.ReviewControl = wasReview;
+            player.InputLocked = wasReview;
             sweeping = false;
             Debug.Log($"TIDE: swept and respawned ({Sweeps})");
         }

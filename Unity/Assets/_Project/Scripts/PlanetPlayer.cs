@@ -1,5 +1,5 @@
 using UnityEngine;
-using Shakedown.Ship;
+using Shakedown.Player;
 
 namespace TestPlanet
 {

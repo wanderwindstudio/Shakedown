@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Shakedown.Ship
+namespace Shakedown.Player
 {
     public class FirstPersonController : MonoBehaviour
     {
@@ -32,8 +32,28 @@ namespace Shakedown.Ship
         protected Vector3 spawn;
         protected Quaternion spawnRotation;
         protected float verticalSpeed, pitch;
-        public float JumpHeight { get => jumpHeight; set => jumpHeight = value; }
-        public bool ReviewControl { get; set; }
+        public float BodyHeight => body.height;
+        public float BodyRadius => body.radius;
+        public float SlopeLimit => body.slopeLimit;
+        public bool OwnsCollider(Collider collider) => collider == body;
+
+        public bool CanStandAt(Vector3 feet)
+        {
+            Vector3 bottom = feet + Vector3.up * BodyRadius;
+            Vector3 top = feet + Vector3.up * (BodyHeight - BodyRadius);
+            foreach (var collider in Physics.OverlapCapsule(bottom, top, BodyRadius, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore))
+                if (!OwnsCollider(collider)) return false;
+            return true;
+        }
+
+        public void SetStandingPose(Vector3 feet, float yaw)
+        {
+            Teleport(feet);
+            body.transform.rotation = Quaternion.Euler(0, yaw, 0);
+            pitch = 0;
+            eyes.transform.localRotation = Quaternion.identity;
+        }
+        public bool InputLocked { get; set; }
 
         public Vector3 Position => body.transform.position;
         public Vector3 Spawn => spawn;
@@ -69,7 +89,7 @@ namespace Shakedown.Ship
 
         protected virtual void Update()
         {
-            if (body == null || ReviewControl)
+            if (body == null || InputLocked)
                 return;
             var keyboard = Keyboard.current;
             var mouse = Mouse.current;

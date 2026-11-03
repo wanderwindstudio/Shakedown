@@ -53,7 +53,7 @@ namespace TestPlanet.Editor
                 Debug.LogError("GEOMETRY_REVIEW_FAIL");
             // Feed the real Input System devices, then let the player's ordinary Update read them.
             player.Respawn();
-            player.ReviewControl = false;
+            player.InputLocked = false;
             PlanetPlayer.LockCursor(true);
             Vector3 before = player.Position;
             Quaternion lookBefore = player.Eyes.transform.rotation;
@@ -67,7 +67,7 @@ namespace TestPlanet.Editor
             yield return null;
             bool escaped = Cursor.lockState == CursorLockMode.None;
             InputSystem.QueueStateEvent(Keyboard.current, new KeyboardState());
-            player.ReviewControl = true;
+            player.InputLocked = true;
             PlanetPlayer.LockCursor(false);
             player.Respawn();
             notes.AppendLine($"Input pass: movement={moved}; mouse look={looked}; Escape releases cursor={escaped}.");

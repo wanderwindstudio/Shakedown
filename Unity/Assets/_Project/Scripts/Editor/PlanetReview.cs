@@ -39,7 +39,7 @@ namespace TestPlanet.Editor
             var player = FindFirstObjectByType<PlanetPlayer>();
             if (player != null)
             {
-                player.ReviewControl = true;
+                player.InputLocked = true;
                 camera.transform.SetParent(null);
                 PlanetPlayer.LockCursor(false);
             }
