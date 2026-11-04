@@ -8,5 +8,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/TestPlanet.unity
     guid: 46571563b879d42c5a0cb16ab1242d39
+  - enabled: 1
+    path: Assets/_Project/Spikes/OrbitTest.unity
+    guid: b66c6d5197b0414ab015cfce8d0f4955
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
