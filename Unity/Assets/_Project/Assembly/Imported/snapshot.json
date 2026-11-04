@@ -1,0 +1,37 @@
+[
+  {
+    "file": "compartment_Bay.fbx",
+    "sha256": "80db3ef38958b3690f76efd31241d9d3e0fae283e343a4179843d5c6f5209ad5",
+    "bytes": 315340
+  },
+  {
+    "file": "compartment_Cabin.fbx",
+    "sha256": "9731cf6d0e7d7f161716edb762a083878550142877f36b5506f281d6882e4f07",
+    "bytes": 204892
+  },
+  {
+    "file": "compartment_Gangway.fbx",
+    "sha256": "dadb7aec76a7b9ba8cf0cdc441e6c97dac045215015b3ac77ee04e8ecbb19b39",
+    "bytes": 172860
+  },
+  {
+    "file": "compartment_Hall.fbx",
+    "sha256": "68267e602a08a2cae9e156d47a059c2a433e6e588376f16bd0b2c4733c865c5e",
+    "bytes": 460188
+  },
+  {
+    "file": "compartment_Nook.fbx",
+    "sha256": "29bad4da35ad51fd820544de7bf1fd9a62694050cd65c2cddea2278f063fb0ab",
+    "bytes": 97676
+  },
+  {
+    "file": "compartment_Skylight.fbx",
+    "sha256": "3ae4756fc46e8964ef0038757a56956b02ef7a4446d052c9853e242e2ca64697",
+    "bytes": 176860
+  },
+  {
+    "file": "cockpit_v3.fbx",
+    "sha256": "18bc1d4802783c2544ff8684b65594d0acd3e3ff191abf5a498cb5aea5d2c175",
+    "bytes": 260060
+  }
+]

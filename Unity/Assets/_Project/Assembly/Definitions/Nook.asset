@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_Script: {fileID: 11500000, guid: 6fca41c2c157404cb4bb5317cb02c663, type: 3}
+  m_Name: Nook
+  m_EditorClassIdentifier:
+  id: Nook
+  height: 2
+  width: 2
+  length: 2
+  cockpit: 0
+  model: {fileID: 919132149155446097, guid: 184a335a61b340e3be72d37b9850740a, type: 3}

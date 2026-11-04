@@ -1,0 +1,28 @@
+fileFormatVersion: 2
+guid: 184a335a61b340e3be72d37b9850740a
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    isReadable: 1
+  meshes:
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useFileUnits: 1
+    useFileScale: 1
+    bakeAxisConversion: 1
+    preserveHierarchy: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 2
+  tangentSpace:
+    normalImportMode: 0
+    normalSmoothAngle: 0
+    tangentImportMode: 3
+  importAnimation: 0
