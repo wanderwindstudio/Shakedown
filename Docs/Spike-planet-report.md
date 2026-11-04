@@ -2,7 +2,7 @@
 
 4 November 2026. Open `Unity/Assets/_Project/Spikes/OrbitTest.unity` and press Play. **L** starts the approach; **R** replays it from orbit, including after arrival. The experiment is isolated in `Assets/_Project/Spikes/`; Pelagic's scene and scripts were reused without edits. The orbit scene was added to the build-scene list for runtime loading. No packages were added.
 
-**Result:** the orbit → cloud cover → existing surface-scene approach works. Four completed Editor runs reached a grounded player in **33.05–33.06 s**, below the 40 s limit. The sequence uses 20 s approaching the day-side island, 5 s passing through cloud cover, then 8 s descending from about 200 m above the island. The landing search found a clear shore patch near **(−155, 4.95, −130)**. Pelagic's tide waits during arrival and resumes at handover.
+**Result:** the orbit → cloud cover → existing surface-scene approach works. Five completed Editor runs reached a grounded player in **33.05–33.06 s**, below the 40 s limit. The sequence uses 20 s approaching the day-side island, 5 s passing through cloud cover, then 8 s descending from about 200 m above the island. The landing search found a clear shore patch near **(−155, 4.95, −130)**. Pelagic's tide waits during arrival and resumes at handover.
 
 **Space and planet:** 3,600 sharp star points, natural star colours, one warm-white sun and glow, a simple pilot windscreen, seeded island clusters and height colours, raised land with sea-level ocean vertices, rotating faceted translucent clouds, a lit-side atmosphere rim and dark night side. A Unity LOD Group selects **320 / 1,280 / 5,120** flat-shaded surface faces with **0.8 s dither cross-fades**.
 
@@ -16,4 +16,4 @@
 
 **Screenshots:** [far](Screenshots/spike-planet/far.png), [mid / about half the view](Screenshots/spike-planet/mid.png), [near / clouds and rim](Screenshots/spike-planet/near.png), [opaque cloud fade](Screenshots/spike-planet/cloud-fade.png), [arrival above the island](Screenshots/spike-planet/arrival.png).
 
-The Mac locked during the final on-foot keypress/exit check. Automatic arrival and grounded handover passed; that last manual input check is not claimed here. The Unity test process was closed afterward. Pre-existing untracked art and planning files were left untouched.
+**Final input check after unlocking:** completed another full landing (33.05 s; hidden load 0.240 s), then verified walking and Space jump after handover. The readout rose from about 5 m at the landing spot to 8 m after moving uphill, then 9 m during the jump. Unity was left out of Play mode. The earlier lock-screen interruption is resolved. Pre-existing untracked art and planning files were left untouched.
