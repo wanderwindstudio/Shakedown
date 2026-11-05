@@ -1,0 +1,100 @@
+{
+  "box_blend": 0.2,
+  "mapping_scale": {
+    "hull": 0.5,
+    "wall": 0.5,
+    "floor": 0.5,
+    "console": 1.0,
+    "upholstery": 2.0
+  },
+  "image_files_packed": [
+    "hull",
+    "wall",
+    "floor",
+    "console",
+    "upholstery",
+    "map"
+  ],
+  "uv_unwrap_performed": false,
+  "closeup_camera_z": 1.75,
+  "removed_chart_glyph_vertices": {
+    "Cockpit_Console": 996,
+    "RENDER_Cutaway": 996
+  },
+  "material_assignments": {
+    "Cockpit_Floor": {
+      "WC / floor / Floor / deep slate": 6,
+      "WC / floor / Floor / slate tiles": 832,
+      "WC / floor / Accent / burnt apricot": 18
+    },
+    "Cockpit_HullExterior": {
+      "WC / hull / Hull / warm limestone": 246,
+      "WC / hull / Frames / charcoal": 104
+    },
+    "Cockpit_Interior": {
+      "WC / wall / Interior / dusty blue grey": 54,
+      "WC / wall / Frames / charcoal": 52,
+      "WC / wall / Interior / pale blue grey": 260
+    },
+    "Cockpit_Canopy": {
+      "Canopy / transparent teal": 30
+    },
+    "Cockpit_Details": {
+      "WC / console / Accent / burnt apricot": 316,
+      "WC / console / Hardware / satin alloy": 1192,
+      "WC / hull / Hull / warm limestone": 48,
+      "WC / console / Frames / charcoal": 226,
+      "WC / wall / Interior / pale blue grey": 52,
+      "WC / upholstery / Accent / burnt apricot": 26,
+      "Light / soft teal": 64
+    },
+    "Cockpit_Chair": {
+      "WC / console / Frames / charcoal": 128,
+      "WC / console / Hardware / satin alloy": 62,
+      "WC / upholstery / Accent / burnt apricot": 52,
+      "Light / soft teal": 52
+    },
+    "Cockpit_Console": {
+      "WC / console / Frames / charcoal": 104,
+      "WC / console / Interior / dusty blue grey": 52,
+      "WC / console / Accent / burnt apricot": 52,
+      "Screen / midnight teal": 78,
+      "Light / soft teal": 270,
+      "WC / console / Hardware / satin alloy": 20,
+      "WC / Starmap / fitted emission": 26
+    },
+    "RENDER_Cutaway": {
+      "WC / hull / Hull / warm limestone": 192,
+      "WC / hull / Frames / charcoal": 36,
+      "WC / console / Frames / charcoal": 454,
+      "WC / wall / Interior / dusty blue grey": 20,
+      "WC / wall / Frames / charcoal": 18,
+      "WC / floor / Floor / deep slate": 6,
+      "WC / floor / Floor / slate tiles": 832,
+      "WC / floor / Accent / burnt apricot": 18,
+      "Canopy / transparent teal": 25,
+      "WC / console / Hardware / satin alloy": 1274,
+      "WC / upholstery / Accent / burnt apricot": 78,
+      "Light / soft teal": 334,
+      "WC / console / Interior / dusty blue grey": 52,
+      "WC / console / Accent / burnt apricot": 368,
+      "Screen / midnight teal": 78,
+      "WC / Starmap / fitted emission": 26,
+      "WC / wall / Interior / pale blue grey": 52
+    }
+  },
+  "module_triangles": 8052,
+  "verified_node_graphs": {
+    "hull": 2,
+    "wall": 3,
+    "console": 4,
+    "floor": 3,
+    "upholstery": 1
+  },
+  "verified_four_render_dimensions": [
+    1920,
+    1080
+  ],
+  "glass_untextured_pass": true,
+  "emission_map_fitted_once_pass": true
+}

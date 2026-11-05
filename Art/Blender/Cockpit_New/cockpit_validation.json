@@ -1,0 +1,61 @@
+{
+  "concept": "Lantern: broad angular panoramic bridge, asymmetric research interior",
+  "blender": "5.2.2 LTS",
+  "objects": {
+    "Cockpit_HullExterior": 620,
+    "Cockpit_Interior": 636,
+    "Cockpit_Floor": 1456,
+    "Cockpit_Canopy": 60,
+    "Cockpit_Chair": 528,
+    "Cockpit_Console": 1076,
+    "Cockpit_Details": 3676
+  },
+  "collider_count": 13,
+  "door_socket_m": [
+    1.4,
+    2.2
+  ],
+  "floor_surface_z_m": 0.12,
+  "interior_camera_z_m": 1.75,
+  "unity_import_tested": false,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "bounds_min_m": [
+    -2.0,
+    -4.0,
+    0.0
+  ],
+  "bounds_max_m": [
+    2.000000238418579,
+    4.0,
+    3.5
+  ],
+  "triangles": 8052,
+  "grid_bounds_pass": true,
+  "flat_shading_pass": true,
+  "zero_pivots_pass": true,
+  "clearance_m": {
+    "chair_front_to_desk": 1.31,
+    "chair_side_to_wall": 1.32,
+    "chair_rear_to_science_station_diagonal": 1.126454615153225,
+    "main_aisle_headroom": 3.0555
+  },
+  "doorway_ray_checks_pass": true,
+  "walkway_vertical_clearances_m": [
+    3.14,
+    3.14,
+    3.14,
+    3.14
+  ],
+  "fbx_meshes": 20,
+  "fbx_roundtrip_dimensions_blender_axes_m": [
+    4.000000238418579,
+    8.0,
+    3.500000540410184
+  ],
+  "watercolour_applied": true,
+  "watercolour_report": "watercolour_validation.json",
+  "plain_colour_fbx_roundtrip_pass": true
+}

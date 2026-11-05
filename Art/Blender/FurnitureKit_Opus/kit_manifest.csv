@@ -1,0 +1,112 @@
+name,footprint_WxLxH,merge_family,variant,access_marker,triangles
+Furn_Counter_Single,1x1x1,Counter,Single,yes,362
+Furn_Counter_EndL,1x1x1,Counter,EndL,yes,319
+Furn_Counter_Mid,1x1x1,Counter,Mid,yes,276
+Furn_Counter_EndR,1x1x1,Counter,EndR,yes,319
+Furn_Counter_CornerIn,1x1x1,Counter,CornerIn,yes,222
+Furn_Counter_CornerOut,1x1x1,Counter,CornerOut,yes,480
+Furn_LowCabinet_Single,1x1x1,LowCabinet,Single,yes,450
+Furn_LowCabinet_EndL,1x1x1,LowCabinet,EndL,yes,407
+Furn_LowCabinet_Mid,1x1x1,LowCabinet,Mid,yes,364
+Furn_LowCabinet_EndR,1x1x1,LowCabinet,EndR,yes,407
+Furn_LowCabinet_CornerIn,1x1x1,LowCabinet,CornerIn,yes,222
+Furn_LowCabinet_CornerOut,1x1x1,LowCabinet,CornerOut,yes,656
+Furn_Locker_Single,1x1x2,Locker,Single,yes,450
+Furn_Locker_EndL,1x1x2,Locker,EndL,yes,407
+Furn_Locker_Mid,1x1x2,Locker,Mid,yes,364
+Furn_Locker_EndR,1x1x2,Locker,EndR,yes,407
+Furn_Locker_CornerIn,1x1x2,Locker,CornerIn,yes,220
+Furn_Locker_CornerOut,1x1x2,Locker,CornerOut,yes,568
+Furn_Shelf_Single,1x1x2,Shelf,Single,yes,364
+Furn_Shelf_EndL,1x1x2,Shelf,EndL,yes,320
+Furn_Shelf_Mid,1x1x2,Shelf,Mid,yes,276
+Furn_Shelf_EndR,1x1x2,Shelf,EndR,yes,320
+Furn_Shelf_CornerIn,1x1x2,Shelf,CornerIn,yes,580
+Furn_Shelf_CornerOut,1x1x2,Shelf,CornerOut,yes,336
+Furn_Bed,1x2x1,none,-,yes,1396
+Furn_Bunk,1x2x2,none,-,yes,940
+Furn_Wardrobe,2x1x2,none,-,yes,424
+Furn_Desk,1x2x1,none,-,yes,680
+Furn_Dinette,2x3x1,none,-,yes,508
+Furn_StorageCase,1x1x1,none,-,yes,532
+Furn_Smelter,2x2x2,none,-,yes,798
+Furn_Fabricator,1x2x2,none,-,yes,422
+Furn_Hydroponics,1x3x2,none,-,yes,822
+Furn_Chair,1x1x1,none,-,yes,628
+Furn_WetCell,1x1x2,none,-,yes,578
+Furn_Kitchenette,1x1x1,Counter,EndOfRun,yes,587
+Furn_Compactor,1x1x2,none,-,yes,476
+Furn_SuitStation,1x1x2,none,-,yes,784
+Furn_Analyzer,1x1x1,none,-,yes,412
+Furn_Locker_Storage,1x1x1,none,-,yes,364
+Decor_Plant,none (decor/small item),none,-,no,236
+Decor_Mug,none (decor/small item),none,-,no,108
+Decor_Books,none (decor/small item),none,-,no,352
+Decor_TableLamp,none (decor/small item),none,-,no,164
+Decor_Rug_2x3,none (decor/small item),none,-,no,108
+Decor_CoffeeMachine,none (decor/small item),none,-,no,260
+Decor_LightSwitch,none (decor/small item),none,-,no,70
+Decor_PictureFrame,none (decor/small item),none,-,no,46
+Decor_Clock,none (decor/small item),none,-,no,288
+Decor_DeskLamp,none (decor/small item),none,-,no,248
+Decor_Radio,none (decor/small item),none,-,no,252
+Decor_TapedPhotos,none (decor/small item),none,-,no,76
+Decor_WallShelf,none (decor/small item),none,-,no,168
+Decor_PlantPotted,none (decor/small item),none,-,no,216
+Wall_WallCabinet_Single,wall slot,WallCabinet,Single,yes,366
+WallChamfer_WallCabinet_Single,wall slot (chamfer row),WallChamfer_WallCabinet,Single,yes,212
+Wall_WallCabinet_EndL,wall slot,WallCabinet,EndL,yes,326
+WallChamfer_WallCabinet_EndL,wall slot (chamfer row),WallChamfer_WallCabinet,EndL,yes,212
+Wall_WallCabinet_Mid,wall slot,WallCabinet,Mid,yes,286
+WallChamfer_WallCabinet_Mid,wall slot (chamfer row),WallChamfer_WallCabinet,Mid,yes,212
+Wall_WallCabinet_EndR,wall slot,WallCabinet,EndR,yes,326
+WallChamfer_WallCabinet_EndR,wall slot (chamfer row),WallChamfer_WallCabinet,EndR,yes,212
+Wall_ShelfNiche,wall slot,none,Single,yes,638
+Wall_WallLight,wall slot,none,Single,no,66
+Wall_Vent,wall slot,none,Single,no,174
+Wall_Screen,wall slot,none,Single,no,100
+Wall_Porthole,wall slot,none,Single,no,942
+Wall_WindowHex,wall slot,none,Single,no,822
+Wall_Pinboard,wall slot,none,Single,no,254
+Wall_FoldTable_Folded,wall slot (floor row),none,Folded,yes,168
+Wall_FoldTable_Open,wall slot (floor row),none,Open,yes,172
+Wall_Terminal,wall slot,none,Single,yes,548
+Wall_WallCabinet_Single_EdgeL,wall slot,WallCabinet,Single_EdgeL,yes,366
+WallChamfer_WallCabinet_Single_EdgeL,wall slot (chamfer row),WallChamfer_WallCabinet,Single_EdgeL,yes,212
+Wall_WallCabinet_EndL_EdgeL,wall slot,WallCabinet,EndL_EdgeL,yes,326
+WallChamfer_WallCabinet_EndL_EdgeL,wall slot (chamfer row),WallChamfer_WallCabinet,EndL_EdgeL,yes,212
+Wall_WallCabinet_Mid_EdgeL,wall slot,WallCabinet,Mid_EdgeL,yes,296
+WallChamfer_WallCabinet_Mid_EdgeL,wall slot (chamfer row),WallChamfer_WallCabinet,Mid_EdgeL,yes,220
+Wall_WallCabinet_EndR_EdgeL,wall slot,WallCabinet,EndR_EdgeL,yes,336
+WallChamfer_WallCabinet_EndR_EdgeL,wall slot (chamfer row),WallChamfer_WallCabinet,EndR_EdgeL,yes,220
+Wall_ShelfNiche_EdgeL,wall slot,none,Single_EdgeL,yes,638
+Wall_WallLight_EdgeL,wall slot,none,Single_EdgeL,no,66
+Wall_Vent_EdgeL,wall slot,none,Single_EdgeL,no,174
+Wall_Screen_EdgeL,wall slot,none,Single_EdgeL,no,100
+Wall_Porthole_EdgeL,wall slot,none,Single_EdgeL,no,942
+Wall_WindowHex_EdgeL,wall slot,none,Single_EdgeL,no,816
+Wall_Pinboard_EdgeL,wall slot,none,Single_EdgeL,no,254
+Wall_FoldTable_Folded_EdgeL,wall slot (floor row),none,Folded_EdgeL,yes,168
+Wall_FoldTable_Open_EdgeL,wall slot (floor row),none,Open_EdgeL,yes,172
+Wall_Terminal_EdgeL,wall slot,none,Single_EdgeL,yes,548
+Wall_WallCabinet_Single_EdgeR,wall slot,WallCabinet,Single_EdgeR,yes,366
+WallChamfer_WallCabinet_Single_EdgeR,wall slot (chamfer row),WallChamfer_WallCabinet,Single_EdgeR,yes,212
+Wall_WallCabinet_EndL_EdgeR,wall slot,WallCabinet,EndL_EdgeR,yes,336
+WallChamfer_WallCabinet_EndL_EdgeR,wall slot (chamfer row),WallChamfer_WallCabinet,EndL_EdgeR,yes,220
+Wall_WallCabinet_Mid_EdgeR,wall slot,WallCabinet,Mid_EdgeR,yes,296
+WallChamfer_WallCabinet_Mid_EdgeR,wall slot (chamfer row),WallChamfer_WallCabinet,Mid_EdgeR,yes,220
+Wall_WallCabinet_EndR_EdgeR,wall slot,WallCabinet,EndR_EdgeR,yes,326
+WallChamfer_WallCabinet_EndR_EdgeR,wall slot (chamfer row),WallChamfer_WallCabinet,EndR_EdgeR,yes,212
+Wall_ShelfNiche_EdgeR,wall slot,none,Single_EdgeR,yes,638
+Wall_WallLight_EdgeR,wall slot,none,Single_EdgeR,no,66
+Wall_Vent_EdgeR,wall slot,none,Single_EdgeR,no,174
+Wall_Screen_EdgeR,wall slot,none,Single_EdgeR,no,100
+Wall_Porthole_EdgeR,wall slot,none,Single_EdgeR,no,942
+Wall_WindowHex_EdgeR,wall slot,none,Single_EdgeR,no,816
+Wall_Pinboard_EdgeR,wall slot,none,Single_EdgeR,no,254
+Wall_FoldTable_Folded_EdgeR,wall slot (floor row),none,Folded_EdgeR,yes,168
+Wall_FoldTable_Open_EdgeR,wall slot (floor row),none,Open_EdgeR,yes,172
+Wall_Terminal_EdgeR,wall slot,none,Single_EdgeR,yes,548
+Wall_FoldTable_Top,wall slot (floor row),none,HingedTop,no,56
+Door_Frame,doorway 1x2 (1 m deep),none,-,no,256
+Door_Leaf,doorway 1x2 (1 m deep),none,-,no,188
